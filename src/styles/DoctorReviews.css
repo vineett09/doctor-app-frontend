@@ -1,0 +1,84 @@
+.doctor-reviews-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .reviews-section {
+    margin-bottom: 30px;
+  }
+  
+  .reviews-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .review-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .review-rating {
+    font-size: 1.5rem;
+    color: gold; /* Change color of stars */
+  }
+  
+  .review-text {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .review-date {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  
+  .review-form {
+    margin-top: 40px;
+  }
+  
+  .review-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .review-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .review-form select {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .review-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+  }
+  
+  .review-form button:disabled {
+    background-color: #ccc;
+  }
+  
+  .review-form button:hover:not(:disabled) {
+    background-color: #45a049;
+  }
+  

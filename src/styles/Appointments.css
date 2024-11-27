@@ -1,0 +1,78 @@
+.appointments-container {
+  background-color: #f8f9fa; /* Light background for contrast */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #343a40; /* Dark text for heading */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none; /* Remove default bullet points */
+  padding: 0;
+}
+
+li {
+  background-color: #ffffff; /* White background for each appointment */
+  margin: 10px 0;
+  padding: 15px;
+  border: 1px solid #dee2e6; /* Light border for separation */
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
+}
+
+li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Elevate on hover */
+}
+
+p {
+  margin: 5px 0;
+  color: #495057; /* Slightly muted text color */
+}
+
+button {
+  background-color: #007bff; /* Primary button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+button:disabled {
+  background-color: #6c757d; /* Disabled button color */
+  cursor: not-allowed;
+}
+
+button + button {
+  margin-left: 10px; /* Space between buttons */
+}
+
+@media (max-width: 600px) {
+  .appointments-container {
+    padding: 15px; /* Reduce padding on smaller screens */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Smaller heading for mobile */
+  }
+
+  button {
+    padding: 8px 12px; /* Adjust button padding for mobile */
+  }
+}

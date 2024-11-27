@@ -1,0 +1,13 @@
+/* src/styles/ServiceCard.css */
+.service-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    background-color: white;
+    transition: box-shadow 0.3s;
+}
+
+.service-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}

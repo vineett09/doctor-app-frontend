@@ -1,0 +1,221 @@
+:root {
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --success-color: #22c55e;
+  --danger-color: #ef4444;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --border-color: #e2e8f0;
+  --bg-light: #f8fafc;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Container - Updated to match BecomeADoctor */
+.doctor-profile-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-md);
+}
+
+/* Heading Styles - Updated */
+.doctor-profile-container h4 {
+  color: var(--primary-color);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+/* Input Styles - Updated to match */
+input[type="text"],
+input[type="number"],
+input[type="file"],
+select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-primary);
+  transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Grid Layouts - Updated */
+.personal-details,
+.professional-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Full Width Inputs */
+input[placeholder="Address"],
+input[placeholder="Clinic Full Address"] {
+  grid-column: 1 / -1;
+}
+
+/* Qualification Section - Updated */
+.qualification-field {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.qualification-field button {
+  padding: 0.5rem 1rem;
+  background: var(--danger-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.qualification-field button:hover {
+  background: #dc2626;
+}
+
+/* Time Picker Styling - Updated */
+.timing-picker {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: var(--bg-light);
+  border-radius: 0.75rem;
+}
+
+.timing-picker .react-time-picker {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+}
+
+.timing-picker .react-time-picker__wrapper {
+  border: none;
+}
+
+.timing-picker select {
+  width: auto;
+  min-width: 70px;
+  margin: 0;
+}
+
+/* Button Styles - Updated */
+button[type="submit"],
+button[type="button"] {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button[type="submit"] {
+  background: var(--primary-color);
+  color: white;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+button[type="submit"]:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+button[type="button"] {
+  background: var(--bg-light);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  margin: 1rem 0;
+}
+
+button[type="button"]:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* React Select Styling - Added */
+.css-b62m3t-container {
+  margin-bottom: 1rem;
+}
+
+.css-13cymwt-control {
+  border-color: var(--border-color) !important;
+  border-radius: 0.5rem !important;
+  min-height: 42px !important;
+}
+
+.css-13cymwt-control:hover {
+  border-color: var(--primary-color) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .doctor-profile-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .personal-details,
+  .professional-details {
+    grid-template-columns: 1fr;
+  }
+
+  .timing-picker {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .timing-picker span {
+    text-align: center;
+  }
+}
+
+/* States */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+input.error {
+  border-color: var(--danger-color);
+}
+
+.error-message {
+  color: var(--danger-color);
+  font-size: 0.875rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+
+.success-message {
+  color: var(--success-color);
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem 0;
+  background: #dcfce7;
+  border-radius: 0.5rem;
+}

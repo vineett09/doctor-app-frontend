@@ -1,0 +1,161 @@
+.search-form-container {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  padding: 3rem 2rem;
+  border-radius: 1.5rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.search-form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+}
+
+/* Search Form - Updated for horizontal layout */
+.search-form {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(8px);
+}
+
+/* Search Fields - Updated */
+.search-field,
+.location-field {
+  position: relative;
+  min-width: 200px;
+}
+
+/* Updated Select Styling */
+.search-form select {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  color: #1e293b;
+  background: white;
+  cursor: pointer;
+  appearance: none;
+  transition: all 0.2s ease;
+  height: 50px; /* Increased height */
+  line-height: 1.5; /* Added for better text alignment */
+}
+
+/* Icon positioning - Updated */
+.search-field::after,
+.location-field::after {
+  content: '🔍';
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 1.2rem; /* Increased icon size */
+  z-index: 1; /* Ensure icon stays above select */
+}
+
+.location-field::after {
+  content: '📍';
+}
+
+/* Search Button - Updated to match height */
+.search-button {
+  padding: 0 2rem;
+  background: #e67e22;
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 50px; /* Match height with select */
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Option Styling - Updated */
+.search-form select option {
+  padding: 1rem;
+  font-size: 1rem;
+  background: white;
+  color: #1e293b;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .search-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .search-button {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .search-form {
+    grid-template-columns: 1fr;
+  }
+
+  .search-field,
+  .location-field,
+  .search-button {
+    grid-column: 1 / -1;
+  }
+
+  .search-form-container {
+    padding: 1.5rem 1rem;
+    margin: 1rem;
+  }
+}
+
+/* Placeholder and Option Styling */
+select:required:invalid {
+  color: #94a3b8;
+}
+
+option[value=""][disabled] {
+  display: none;
+}
+
+option {
+  color: #1e293b;
+}
+
+/* Custom Scrollbar */
+select::-webkit-scrollbar {
+  width: 8px;
+}
+
+select::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+select::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+}
+
+select::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}

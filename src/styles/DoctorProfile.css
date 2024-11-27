@@ -1,0 +1,223 @@
+:root {
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --secondary-color: #e67e22;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --border-color: #e2e8f0;
+  --bg-light: #f8fafc;
+  --success-color: #22c55e;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-profile-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-md);
+}
+
+.doctor-profile-container h1 {
+  color: var(--text-primary);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Profile Picture */
+.doctor-profile {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.doctor-profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-color);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Contact Information */
+.contact-info {
+  background: var(--bg-light);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+  color: var(--text-secondary);
+}
+
+.rating {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+}
+
+.rating a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.rating a:hover {
+  text-decoration: underline;
+}
+
+/* Professional Details */
+.professional-details {
+  margin: 2rem 0;
+}
+
+.professional-details h4 {
+  color: var(--primary-color);
+  font-size: 1.25rem;
+  margin: 1.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.professional-details p {
+  margin: 0.75rem 0;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.professional-details strong {
+  color: var(--text-primary);
+  margin-right: 0.5rem;
+}
+
+/* Availability Section */
+.availability-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.availability-box {
+  background: var(--bg-light);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.mode-box {
+  display: inline-flex;
+  align-items: center;
+  background: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+}
+
+/* Appointment Booking Section */
+.label {
+  display: block;
+  margin: 2rem 0 1rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.appointment-date-input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.appointment-date-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.book-appointment-button {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.book-appointment-button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .doctor-profile-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .doctor-profile-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .doctor-profile-pic {
+    width: 150px;
+    height: 150px;
+  }
+
+  .availability-container {
+    gap: 0.5rem;
+  }
+
+  .availability-box {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Loading State */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+}
+
+/* Error State */
+.error-message {
+  color: #ef4444;
+  text-align: center;
+  padding: 1rem;
+  background: #fee2e2;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+/* Success Message */
+.success-message {
+  color: var(--success-color);
+  text-align: center;
+  padding: 1rem;
+  background: #dcfce7;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}

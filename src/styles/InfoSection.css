@@ -1,0 +1,62 @@
+/* src/styles/InfoSection.css */
+
+.info-section {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center content vertically */
+    justify-content: flex-start; /* Align content to the left */
+    background: url('../images/doctor-2.jpg') no-repeat center center/cover; /* Background image */
+    color: white; /* White text for contrast */
+    padding: 80px 40px; /* Increased padding for a more spacious feel */
+    border-radius: 12px; /* Rounded corners */
+    margin-bottom: 33px; /* Spacing from other sections */
+    margin-top: 33px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Deeper shadow for depth */
+    position: relative; /* For absolute positioning of pseudo-element */
+    overflow: hidden; /* Hide overflow for clean edges */
+    min-height: 400px; /* Set a minimum height to cover more area */
+}
+
+.info-section:before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    z-index: 1; /* Position overlay below text */
+}
+
+
+
+/* Optional: Last paragraph styling for emphasis */
+.info-section p:last-child {
+    font-weight: bold; /* Bold for emphasis */
+    color: #ffd700; /* Gold color for the last paragraph */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8); /* Enhanced shadow for depth */
+    margin-left: 900px;
+    text-align:middle;
+    font-size: 2rem;
+
+}
+
+/* Make sure the section takes full width */
+.info-section {
+    width: 100%; /* Full width */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .info-section {
+        padding: 40px 20px; /* Adjust padding for smaller screens */
+        min-height: 300px; /* Adjust min-height for smaller screens */
+    }
+
+    .info-section h2 {
+        font-size: 3rem; /* Adjust font size for smaller screens */
+    }
+
+    .info-section p {
+        font-size: 1.4rem; /* Adjust font size for smaller screens */
+        max-width: 90%; /* Allow more width on smaller screens */
+    }
+}

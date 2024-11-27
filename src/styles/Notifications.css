@@ -1,0 +1,31 @@
+.notification-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+  }
+  
+  .notification-card.read {
+    background-color: #f9f9f9;
+  }
+  
+  .notification-card.unread {
+    background-color: #e0f7fa;
+  }
+  
+  .notification-time {
+    font-size: 0.85em;
+    color: #888;
+  }
+  
+  .user-details {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+  }
+  
+  .user-details p {
+    margin: 5px 0;
+  }
+  

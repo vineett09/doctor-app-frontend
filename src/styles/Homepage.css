@@ -1,0 +1,186 @@
+:root {
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --secondary-color: #e67e22;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --border-color: #e2e8f0;
+  --bg-light: #f8fafc;
+  --bg-white: #ffffff;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.homepage {
+  min-height: 100vh;
+  background: var(--bg-light);
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Search Form Styling */
+.search-form-container {
+  background: var(--gradient);
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-md);
+}
+
+.search-form {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.search-field,
+.location-field {
+  flex: 1;
+}
+
+.search-form select {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.search-button {
+  padding: 1rem 2rem;
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.search-button:hover {
+  transform: translateY(-2px);
+  background: #d35400;
+}
+
+/* Card Sections */
+.card {
+  background: var(--bg-white);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.card h2 {
+  color: var(--text-primary);
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.card h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 3px;
+}
+
+/* Service Cards Grid */
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.service-card {
+  background: var(--bg-light);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Links */
+.card-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.card-link:hover {
+  color: var(--primary-hover);
+}
+
+/* Buttons */
+.join-btn,
+.find-doctor-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin: 1rem 0;
+  width: 17%;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.join-btn {
+  background: var(--primary-color);
+  color: white;
+  margin-right: 1rem;
+}
+
+.find-doctor-btn {
+  background: var(--secondary-color);
+  color: white;
+}
+
+.join-btn:hover,
+.find-doctor-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 1rem;
+  }
+
+  .search-form {
+    flex-direction: column;
+  }
+
+  .search-field,
+  .location-field {
+    width: 100%;
+  }
+
+  .search-button {
+    width: 100%;
+  }
+
+  .service-cards {
+    grid-template-columns: 1fr;
+  }
+}
