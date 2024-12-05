@@ -199,66 +199,154 @@
 .doctors-table tbody tr:hover {
   background-color: #f8fafc;
 }
-/* Doctor Requests Section */
+/* Doctor Request Cards */
 .requests-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
   padding: 1rem;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
 }
 
-.request-item {
+.request-card {
   background: white;
   border-radius: 12px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  height: auto; /* Allow card to expand */
+}
+
+.request-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .request-header {
   padding: 1.5rem;
+  background: #f8fafc;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid #e5e7eb;
+}
+
+.request-basic-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.request-profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.request-info-text h3 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 .request-details {
   padding: 1.5rem;
+  height: auto; /* Allow content to expand */
+  overflow: visible; /* Show all content */
+  background: white;
 }
 
-.request-title {
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  height: auto; /* Allow grid to expand */
+}
+
+.detail-section {
+  background: #f8fafc;
+  padding: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  height: auto; /* Allow sections to expand */
+}
+
+.detail-section h4 {
+  color: #1f2937;
+  margin: 0 0 1rem 0;
   font-size: 1.1rem;
-  color: #1a1a1a;
-  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e5e7eb;
 }
 
-.request-specialty {
-  color: #6b7280;
-  margin: 0;
+.detail-section p {
+  margin: 0.75rem 0;
+  color: #4b5563;
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow text to wrap */
+  gap: 0.5rem;
+}
+
+.detail-section strong {
+  color: #1f2937;
+  min-width: 120px;
+}
+
+.qualifications-list,
+.availability-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+  max-height: none; /* Remove max height */
+}
+
+.qualifications-list li,
+.availability-list li {
+  padding: 0.5rem;
+  margin: 0.25rem 0;
+  background: white;
+  border-radius: 4px;
+  color: #4b5563;
+  font-size: 0.95rem;
+  word-break: break-word; /* Handle long text */
 }
 
 .action-buttons {
   display: flex;
   gap: 1rem;
-  margin-top: 1rem;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-top: 1px solid #e5e7eb;
+  position: relative; /* Ensure buttons stay at bottom */
 }
 
-.approve-btn, .reject-btn {
-  flex: 1;
-  padding: 0.75rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.3s ease;
+/* Add smooth transition for expanding/collapsing */
+.request-details {
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+  visibility: visible;
 }
 
-.approve-btn {
-  background: #22c55e;
-  color: white;
+.request-details.collapsed {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  padding: 0;
 }
 
-.reject-btn {
-  background: #ef4444;
-  color: white;
+/* Ensure container scrolls properly */
+.dashboard-section.doctor-requests-section {
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
 }
 
 /* Notifications Section */

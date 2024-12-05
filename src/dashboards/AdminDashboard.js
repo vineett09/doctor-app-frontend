@@ -251,6 +251,9 @@ const AdminDashboard = () => {
           <section className="dashboard-section doctor-requests-section">
             <div className="section-header">
               <h2 className="section-title">Doctor Requests</h2>
+              <span className="request-count">
+                Pending Requests: {requests.length}
+              </span>
             </div>
             {loadingRequests ? (
               <p className="loading-state">Loading requests...</p>
@@ -259,37 +262,122 @@ const AdminDashboard = () => {
             ) : requests.length > 0 ? (
               <div className="requests-container custom-scrollbar">
                 {requests.map((req) => (
-                  <div key={req._id} className="request-item">
+                  <div key={req._id} className="request-card">
                     <div
                       className="request-header"
                       onClick={() => toggleDetails(req._id)}
                     >
-                      <h3 className="request-title">{`Dr. ${req.firstName} ${req.lastName}`}</h3>
-                      <p className="request-specialty">{req.specialty}</p>
+                      <div className="request-basic-info">
+                        <img
+                          src={req.profilePic || "/default-doctor.png"}
+                          alt={`Dr. ${req.firstName}`}
+                          className="request-profile-pic"
+                        />
+                        <div>
+                          <h3>{`Dr. ${req.firstName} ${req.lastName}`}</h3>
+                          <p className="specialty">{req.specialty}</p>
+                        </div>
+                      </div>
+                      <span
+                        className={`expand-icon ${
+                          selectedRequestId === req._id ? "expanded" : ""
+                        }`}
+                      >
+                        ▼
+                      </span>
                     </div>
+
                     {selectedRequestId === req._id && (
                       <div className="request-details">
-                        <h4>Personal Details</h4>
-                        <img
-                          src={req.profilePic}
-                          alt={`${req.firstName} ${req.lastName}`}
-                          className="doctor-img"
-                        />
-                        <p>Email: {req.user.email}</p>
-                        <p>Experience: {req.experience} years</p>
-                        <p>Location: {req.city}</p>
+                        <div className="details-grid">
+                          <div className="detail-section">
+                            <h4>Personal Information</h4>
+                            <p>
+                              <strong>Email:</strong> {req.user.email}
+                            </p>
+                            <p>
+                              <strong>Phone:</strong> {req.PhoneNo}
+                            </p>
+                            <p>
+                              <strong>Experience:</strong> {req.experience}{" "}
+                              years
+                            </p>
+                          </div>
+
+                          <div className="detail-section">
+                            <h4>Consultation Details</h4>
+                            <p>
+                              <strong>Fee:</strong> ₹{req.consultationFee}
+                            </p>
+                            <p>
+                              <strong>Mode:</strong> {req.consultationMode}
+                            </p>
+                            <p>
+                              <strong>Timings:</strong> {req.timings.start} -{" "}
+                              {req.timings.end}
+                            </p>
+                          </div>
+
+                          <div className="detail-section">
+                            <h4>Location</h4>
+                            <p>
+                              <strong>Address:</strong> {req.fullAddress}
+                            </p>
+                            <p>
+                              <strong>City:</strong> {req.city}
+                            </p>
+                            <p>
+                              <strong>State:</strong> {req.state}
+                            </p>
+                            <p>
+                              <strong>Pin Code:</strong> {req.pinCode}
+                            </p>
+                          </div>
+
+                          <div className="detail-section">
+                            <h4>Clinic Details</h4>
+                            <p>
+                              <strong>Address:</strong> {req.clinicAddress}
+                            </p>
+                            <p>
+                              <strong>City:</strong> {req.clinicCity}
+                            </p>
+                            <p>
+                              <strong>Pin Code:</strong> {req.clinicPinCode}
+                            </p>
+                          </div>
+
+                          <div className="detail-section">
+                            <h4>Qualifications</h4>
+                            <ul className="qualifications-list">
+                              {req.qualifications.map((qual, index) => (
+                                <li key={index}>{qual}</li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          <div className="detail-section">
+                            <h4>Availability</h4>
+                            <ul className="availability-list">
+                              {req.availability.map((day, index) => (
+                                <li key={index}>{day}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+
                         <div className="action-buttons">
                           <button
                             className="approve-btn"
                             onClick={() => handleDecision(req._id, true)}
                           >
-                            Approve
+                            Approve Request
                           </button>
                           <button
                             className="reject-btn"
                             onClick={() => handleDecision(req._id, false)}
                           >
-                            Reject
+                            Reject Request
                           </button>
                         </div>
                       </div>
@@ -298,7 +386,7 @@ const AdminDashboard = () => {
                 ))}
               </div>
             ) : (
-              <p className="empty-state">No doctor requests yet.</p>
+              <p className="empty-state">No pending doctor requests.</p>
             )}
           </section>
         );

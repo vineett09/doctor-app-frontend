@@ -12,9 +12,9 @@ import Services from "./pages/Services";
 import DoctorProfile from "./pages/DoctorProfile";
 import DoctorAppointments from "./pages/DoctorAppointments"; // Import the new component
 import SearchResults from "./components/SearchResults";
-import DoctorDashboard from "./notifications/DoctorDashboard";
-import UserDashboard from "./notifications/UserDashboard";
-import AdminDashboard from "./notifications/AdminDashboard";
+import DoctorDashboard from "./dashboards/DoctorDashboard";
+import UserDashboard from "./dashboards/UserDashboard";
+import AdminDashboard from "./dashboards/AdminDashboard";
 import DoctorUserUpdate from "./pages/DoctorUserUpdate";
 import DoctorReviews from "./pages/DoctorReviews";
 
